@@ -20,12 +20,31 @@ namespace ShirtAppMVCFinal
         }
 
         // GET: Shirts
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["PriceSortParm"] = sortOrder == "Price" ? "price_desc" : "Price";
+            var shirts = from s in _context.Shirts
+                           select s;
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    shirts = shirts.OrderByDescending(s => s.ShirtName);
+                    break;
+                case "Price":
+                    shirts = shirts.OrderBy(s => s.Price);
+                    break;
+                case "price_desc":
+                    shirts = shirts.OrderByDescending(s => s.Price);
+                    break;
+                default:
+                    shirts = shirts.OrderBy(s => s.ShirtName);
+                    break;
+            }
             return View(await _context.Shirts.ToListAsync());
         }
 
-        // GET: Shirts/Details/5
+        // GET: Shirts/Details/5    
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

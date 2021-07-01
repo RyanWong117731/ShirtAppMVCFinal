@@ -20,8 +20,8 @@ namespace ShirtAppMVCFinal.Data
 
             var shirts = new Shirt[]
             {
-            new Shirt{ShirtName="Test1",Size = Size.S, Price = 3},
-            new Shirt{ShirtName="Test2",Size = Size.M, Price = 3}
+            new Shirt{ShirtName="Test1",FilePath = "File//:",Size = Size.S, Price = 310},
+            new Shirt{ShirtName="Test2",FilePath = "test file path",Size = Size.M, Price = 3}
             };
             foreach (Shirt s in shirts)
             {

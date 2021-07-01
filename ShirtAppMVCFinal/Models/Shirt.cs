@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,7 +14,11 @@ namespace ShirtAppMVCFinal.Models
     {
         public int ShirtID { get; set; }
 
+        [Required]
         public string ShirtName { get; set; }
+        [Required]
+        public string FilePath { get; set; }
+
         public float Price { get; set; }
         public Size? Size { get; set; }
 

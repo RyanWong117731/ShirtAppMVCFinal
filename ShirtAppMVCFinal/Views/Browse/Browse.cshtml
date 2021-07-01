@@ -1,26 +1,23 @@
 ﻿@model IEnumerable<ShirtAppMVCFinal.Models.Shirt>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Browse";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Browse</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.ShirtName)</a>
+                @Html.DisplayNameFor(model => model.ShirtName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.FilePath)
             </th>
             <th>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["PriceSortParm"]">@Html.DisplayNameFor(model => model.Price)</a>
+                @Html.DisplayNameFor(model => model.Price)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Size)
@@ -38,15 +35,13 @@
                 @Html.DisplayFor(modelItem => item.FilePath)
             </td>
             <td>
-                $@Html.DisplayFor(modelItem => item.Price)
+                @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Size)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ShirtID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ShirtID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ShirtID">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.ShirtID">Details</a>
             </td>
         </tr>
 }
