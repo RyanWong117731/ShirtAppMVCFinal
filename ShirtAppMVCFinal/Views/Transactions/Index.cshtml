@@ -17,6 +17,9 @@
                 Email
             </th>
             <th>
+                Shipping Adress
+            </th>
+            <th>
                 Shirts
             </th>
             <th></th>
@@ -27,6 +30,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippingAdress)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Shirt.ShirtName)

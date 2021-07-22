@@ -21,7 +21,6 @@ namespace ShirtAppMVCFinal
         }
 
         // GET: Transactions
-        [Authorize]
         public async Task<IActionResult> Index(int? id, int? shirtID)
         {
             var viewModel = new TransactionIndexData();

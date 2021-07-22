@@ -31,8 +31,8 @@ namespace ShirtAppMVCFinal.Data
 
             var transactions = new Transaction[]
             {
-            new Transaction{Email="Test@gmail.com",ShirtID = 1},
-            new Transaction{Email="admin@gmail.com",ShirtID = 2},
+            new Transaction{Email="Test@gmail.com",ShippingAdress="a place",ShirtID = 1},
+            new Transaction{Email="admin@gmail.com",ShippingAdress="home lul",ShirtID = 2},
             };
             foreach (Transaction c in transactions)
             {

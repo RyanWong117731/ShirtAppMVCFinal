@@ -11,6 +11,7 @@ using ShirtAppMVCFinal.Models;
 
 namespace ShirtAppMVCFinal
 {
+    [Authorize]
     public class ShirtsController : Controller
     {
         private readonly ApplicationContext _context;
@@ -21,7 +22,6 @@ namespace ShirtAppMVCFinal
         }
 
         // GET: Shirts
-        [Authorize]
         public async Task<IActionResult> Index(string sortOrder)
         {
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";

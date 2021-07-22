@@ -11,6 +11,7 @@ namespace ShirtAppMVCFinal.Models
         public int ShirtID { get; set; }
 
         public string Email { get; set; }
+        public string ShippingAdress { get; set; }
 
         public Shirt Shirt { get; set; }
     }
